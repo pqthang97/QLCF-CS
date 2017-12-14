@@ -1,0 +1,6 @@
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\obj\Debug\QLCF.BanHangFrm.resources
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\obj\Debug\QLCF.MainForm.resources
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\obj\Debug\QLCF.Properties.Resources.resources
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\obj\Debug\QLCF.UI.csproj.GenerateResource.Cache
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\obj\Debug\QLCF.exe.licenses
+C:\Users\pqtha\documents\visual studio 2015\Projects\QLCF\QLCF\bin\Debug\QLCF.exe.config
