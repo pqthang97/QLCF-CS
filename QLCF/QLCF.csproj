@@ -52,16 +52,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v15.2" />
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.2" />
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.2" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -92,7 +103,7 @@
       <DependentUpon>BanHangFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomControl\PButton.cs">
       <SubType>Component</SubType>
@@ -104,31 +115,32 @@
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLCF.Context.cs">
+    <Compile Include="QLCFEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLCF.Context.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLCF.cs">
+    <Compile Include="QLCFEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLCF.Designer.cs">
+    <Compile Include="QLCFEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLCF.edmx</DependentUpon>
+      <DependentUpon>QLCFEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ReportObject\OrderReportObject.cs" />
     <Compile Include="RepositoryInterface\ICategoryRepository.cs" />
     <Compile Include="RepositoryInterface\IOrderRepository.cs" />
     <Compile Include="RepositoryInterface\IProductRepository.cs" />
@@ -141,10 +153,17 @@
     <Compile Include="Repository\TableRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Table.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>QLCF.tt</DependentUpon>
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ProductOrder.cs" />
+    <Compile Include="XtraReport\OrderReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport\OrderReport.Designer.cs">
+      <DependentUpon>OrderReport.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BanHangFrm.resx">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
@@ -161,7 +180,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="XtraReport\OrderReport.resx">
+      <DependentUpon>OrderReport.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -173,12 +196,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLCF.edmx">
+    <EntityDeploy Include="QLCFEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLCF.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLCFEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="QLCF.edmx.diagram">
-      <DependentUpon>QLCF.edmx</DependentUpon>
+    <None Include="QLCFEntities.edmx.diagram">
+      <DependentUpon>QLCFEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -194,26 +217,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="QLCF.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLCF.edmx</DependentUpon>
-      <LastGenOutput>QLCF.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="QLCF.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QLCF.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLCF.edmx</DependentUpon>
-      <LastGenOutput>QLCF.cs</LastGenOutput>
-    </Content>
-    <Content Include="QLCF_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLCF.mdf</DependentUpon>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="QLCFEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLCFEntities.edmx</DependentUpon>
+      <LastGenOutput>QLCFEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLCFEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLCFEntities.edmx</DependentUpon>
+      <LastGenOutput>QLCFEntities.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Coffee-icon.png" />
+    <None Include="Resources\TableOrdering.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

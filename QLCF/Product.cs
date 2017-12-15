@@ -26,11 +26,9 @@ namespace QLCF
         public Nullable<int> Cost { get; set; }
         public Nullable<int> Count { get; set; }
         public string Description { get; set; }
-        public Nullable<int> TableId { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderInfo> OrderInfoes { get; set; }
-        public virtual Table Table { get; set; }
     }
 }

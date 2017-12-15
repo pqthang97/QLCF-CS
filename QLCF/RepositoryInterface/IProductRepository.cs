@@ -11,6 +11,7 @@ namespace QLCF.RepositoryInterface
     {
         IEnumerable<Product> FindAll();
         IEnumerable<Product> FindAvailable();
+        IEnumerable<Product> FindByCatID(int CatID);
         Product FindBy(int id);
         void Save(Product order);
     }

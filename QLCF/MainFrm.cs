@@ -11,7 +11,7 @@ namespace QLCF
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private BanHangFrm frmBanHang;
+        private MainFrm frmBanHang;
         public MainForm()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace QLCF
         {
             if(frmBanHang == null)
             {
-                frmBanHang = new BanHangFrm();
+                frmBanHang = new MainFrm();
                 frmBanHang.MdiParent = this;
                 frmBanHang.Show();
             }

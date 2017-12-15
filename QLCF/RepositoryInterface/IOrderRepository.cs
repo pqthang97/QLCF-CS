@@ -1,4 +1,5 @@
 ﻿
+using QLCF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace QLCF.RepositoryInterface
         IEnumerable<Order> FindAll();
         IEnumerable<Order> FindAvailable();
         Order FindBy(int id);
-        void Save(Order order);
+        Order FindByTable(int TableID);
+        IEnumerable<ProductOrder> OrderInfoFindByTable(int TableID);
+        Order Save(Order order);
+        bool AddProductToOrderInfo(int count, Product product, Order order);
+        bool RemoveProduct(int ProductID, Order order);
+        bool Payment(Order order, int discount, int total);
     }
 }

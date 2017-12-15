@@ -23,7 +23,7 @@ namespace QLCF.Repository
 
         public Table FindBy(int id)
         {
-            throw new NotImplementedException();
+            return db.Tables.Where(x => x.Id == id).FirstOrDefault();
         }
 
         public void Save(Table order)
