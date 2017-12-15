@@ -1,6 +1,6 @@
 ﻿namespace QLCF
 {
-    partial class MainFrm
+    partial class BanHangFrm
     {
         /// <summary>
         /// Required designer variable.

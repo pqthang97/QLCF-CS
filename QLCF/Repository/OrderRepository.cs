@@ -76,7 +76,7 @@ namespace QLCF.Repository
 
         public IEnumerable<Order> FindAll()
         {
-            throw new NotImplementedException();
+            return db.Orders.OrderByDescending(x => x.Id).ToList();
         }
 
         public IEnumerable<Order> FindAvailable()
@@ -158,5 +158,7 @@ namespace QLCF.Repository
             }
             return false;
         }
+
+        
     }
 }

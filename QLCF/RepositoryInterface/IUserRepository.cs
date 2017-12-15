@@ -12,6 +12,10 @@ namespace QLCF.RepositoryInterface
         IEnumerable<User> FindAll();
         IEnumerable<User> FindAvailable();
         User FindBy(int id);
-        void Save(User order);
+        void Save(User user);
+        void Update(User user);
+        void Delete(User user);
+
+        User Login(string username, string password);
     }
 }

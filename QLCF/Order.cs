@@ -28,6 +28,7 @@ namespace QLCF
         public string Status { get; set; }
         public Nullable<int> Discount { get; set; }
     
+        public virtual Table Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderInfo> OrderInfoes { get; set; }
     }

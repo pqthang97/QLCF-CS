@@ -108,14 +108,20 @@
     <Compile Include="CustomControl\PButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MainFrm.cs">
+    <Compile Include="LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainFrm.Designer.cs">
-      <DependentUpon>MainFrm.cs</DependentUpon>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>QLCFEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderFrm.Designer.cs">
+      <DependentUpon>OrderFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.cs">
       <DependentUpon>QLCFEntities.tt</DependentUpon>
@@ -123,8 +129,6 @@
     <Compile Include="Product.cs">
       <DependentUpon>QLCFEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLCFEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +144,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLCFEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>QLCFEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFrm.Designer.cs">
+      <DependentUpon>UserFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableFrm.Designer.cs">
+      <DependentUpon>TableFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMucSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMucSPForm.Designer.cs">
+      <DependentUpon>DanhMucSPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInterface\IActionForm.cs" />
+    <Compile Include="GlobalV.cs" />
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportObject\OrderReportObject.cs" />
     <Compile Include="RepositoryInterface\ICategoryRepository.cs" />
     <Compile Include="RepositoryInterface\IOrderRepository.cs" />
@@ -152,11 +190,11 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\TableRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="Table.cs">
-      <DependentUpon>QLCFEntities.tt</DependentUpon>
+    <Compile Include="SanPhamFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>QLCFEntities.tt</DependentUpon>
+    <Compile Include="SanPhamFrm.Designer.cs">
+      <DependentUpon>SanPhamFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ProductOrder.cs" />
     <Compile Include="XtraReport\OrderReport.cs">
@@ -167,6 +205,21 @@
     </Compile>
     <EmbeddedResource Include="BanHangFrm.resx">
       <DependentUpon>BanHangFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderFrm.resx">
+      <DependentUpon>OrderFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFrm.resx">
+      <DependentUpon>UserFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableFrm.resx">
+      <DependentUpon>TableFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMucSPForm.resx">
+      <DependentUpon>DanhMucSPForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
@@ -182,6 +235,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SanPhamFrm.resx">
+      <DependentUpon>SanPhamFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport\OrderReport.resx">
       <DependentUpon>OrderReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,13 +252,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLCFEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLCFEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QLCFEntities.edmx.diagram">
-      <DependentUpon>QLCFEntities.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -220,6 +269,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="QLCFEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLCFEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLCFEntities.edmx.diagram">
+      <DependentUpon>QLCFEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Resources\Coffee-icon.png" />
+    <None Include="Resources\TableOrdering.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLCFEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLCFEntities.edmx</DependentUpon>
@@ -230,10 +290,7 @@
       <DependentUpon>QLCFEntities.edmx</DependentUpon>
       <LastGenOutput>QLCFEntities.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\Coffee-icon.png" />
-    <None Include="Resources\TableOrdering.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

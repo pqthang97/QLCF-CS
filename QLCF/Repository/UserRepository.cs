@@ -10,9 +10,16 @@ namespace QLCF.Repository
 {
     class UserRepository : IUserRepository
     {
+        QLCFEntities db = DBContext.Instance.GetEntities();
+        public void Delete(User user)
+        {
+            db.Users.Remove(user);
+            db.SaveChanges();
+        }
+
         public IEnumerable<User> FindAll()
         {
-            throw new NotImplementedException();
+            return db.Users.ToList();
         }
 
         public IEnumerable<User> FindAvailable()
@@ -25,9 +32,22 @@ namespace QLCF.Repository
             throw new NotImplementedException();
         }
 
-        public void Save(User order)
+        public User Login(string username, string password)
         {
-            throw new NotImplementedException();
+            return db.Users.Where(x => x.username == username).Where(x => x.password == password).FirstOrDefault();
+        }
+
+        public void Save(User user)
+        {
+            db.Users.Add(user);
+            db.SaveChanges();
+        }
+
+        public void Update(User user)
+        {
+            db.Users.Attach(user);
+            db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

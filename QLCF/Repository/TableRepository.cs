@@ -26,13 +26,27 @@ namespace QLCF.Repository
             return db.Tables.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public void Save(Table order)
+        public void Save(Table table)
         {
-            throw new NotImplementedException();
+            db.Tables.Add(table);
+            db.SaveChanges();
         }
         public void Dispose()
         {
             db.Dispose();
+        }
+
+        public void Update(Table table)
+        {
+            db.Tables.Attach(table);
+            db.Entry(table).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void Delete(Table table)
+        {
+            db.Tables.Remove(table);
+            db.SaveChanges();
         }
     }
 }

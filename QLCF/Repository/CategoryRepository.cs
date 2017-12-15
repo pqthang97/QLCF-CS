@@ -10,6 +10,13 @@ namespace QLCF.Repository
     class CategoryRepository : ICategoryRepository
     {
         private QLCFEntities db = DBContext.Instance.GetEntities();
+
+        public void Delete(Category category)
+        {
+            db.Categories.Remove(category);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Category> FindAll()
         {
             return db.Categories.ToList();
@@ -27,7 +34,15 @@ namespace QLCF.Repository
 
         public void Save(Category category)
         {
-            throw new NotImplementedException();
+            db.Categories.Add(category);
+            db.SaveChanges();
+        }
+
+        public void Update(Category category)
+        {
+            db.Categories.Attach(category);
+            db.Entry(category).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

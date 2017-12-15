@@ -15,10 +15,11 @@ using QLCF.ViewModel;
 using QLCF.XtraReport;
 using QLCF.ReportObject;
 using DevExpress.XtraReports.UI;
+using QLCF.FormInterface;
 
 namespace QLCF
 {
-    public partial class MainFrm : DevExpress.XtraEditors.XtraForm
+    public partial class BanHangFrm : DevExpress.XtraEditors.XtraForm, IActionForm
     {
         TableRepository TableRepo = new TableRepository();
         CategoryRepository CategoryRepo = new CategoryRepository();
@@ -28,13 +29,24 @@ namespace QLCF
 
         Order CurrentOrder = null;
         Table CurrentTable = null;
-        public MainFrm()
+        public BanHangFrm()
         {
             InitializeComponent();
 
             initTable();
             
             splitContainer.SplitterPosition = Screen.PrimaryScreen.Bounds.Width * 2 / 5;
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            GlobalV.frmActive = this.Name;
+        }
+        protected override void OnDeactivate(EventArgs e)
+        {
+            base.OnDeactivate(e);
+            GlobalV.frmActive = null;
         }
 
         private void initTable()
@@ -55,7 +67,7 @@ namespace QLCF
         {
             PButton btn = new PButton();
             
-            btn.Text = table.Name;
+            btn.Text = table.Name.Trim();
             btn.TableID = table.Id;
             btn.Order = OrderRepo.FindByTable(table.Id);
             btn.Visible = true;
@@ -196,6 +208,21 @@ namespace QLCF
         {
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        public void ThemMoi()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Luu()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Xoa()
+        {
+            throw new NotImplementedException();
         }
     }
 }

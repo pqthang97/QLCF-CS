@@ -13,5 +13,7 @@ namespace QLCF.RepositoryInterface
         IEnumerable<Category> FindAvailable();
         Category FindBy(int id);
         void Save(Category category);
+        void Update(Category category);
+        void Delete(Category category);
     }
 }

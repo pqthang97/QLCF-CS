@@ -11,9 +11,16 @@ namespace QLCF.Repository
     class ProductRepository : IProductRepository
     {
         private QLCFEntities db = DBContext.Instance.GetEntities();
+
+        public void Delete(Product product)
+        {
+            db.Products.Remove(product);
+            db.SaveChanges();
+        }
+
         public IEnumerable<Product> FindAll()
         {
-            throw new NotImplementedException();
+            return db.Products.ToList();
         }
 
         public IEnumerable<Product> FindAvailable()
@@ -31,9 +38,17 @@ namespace QLCF.Repository
             return db.Products.Where(x => x.CategoryId == CatID).ToList();
         }
 
-        public void Save(Product order)
+        public void Save(Product product)
         {
-            throw new NotImplementedException();
+            db.Products.Add(product);
+            db.SaveChanges();
+        }
+
+        public void Update(Product product)
+        {
+            db.Products.Attach(product);
+            db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }

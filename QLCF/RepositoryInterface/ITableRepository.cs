@@ -12,6 +12,8 @@ namespace QLCF.RepositoryInterface
         List<Table> FindAll();
         IEnumerable<Table> FindAvailable();
         Table FindBy(int id);
-        void Save(Table order);
+        void Save(Table table);
+        void Update(Table table);
+        void Delete(Table table);
     }
 }

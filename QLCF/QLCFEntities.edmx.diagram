@@ -4,14 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d39fbe0ca3a546ab9ffd27ee21f18efb" Name="Diagram1">
+      <Diagram DiagramId="33f9a55bb99c4230aca97d2c79a726f9" Name="Diagram1">
         <EntityTypeShape EntityType="QLCFModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLCFModel.Order" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCFModel.Order" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCFModel.OrderInfo" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCFModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLCFModel.Table" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLCFModel.User" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCFModel.Table" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCFModel.User" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="QLCFModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCFModel.FK_Order_Table" ManuallyRouted="false" />
         <AssociationConnector Association="QLCFModel.FK_OrderInfo_Order" ManuallyRouted="false" />
         <AssociationConnector Association="QLCFModel.FK_OrderInfo_Product" ManuallyRouted="false" />
       </Diagram>
